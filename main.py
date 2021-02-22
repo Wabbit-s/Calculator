@@ -10,7 +10,15 @@ def click(event):
         if val.get().isdigit():
             value = int(val.get())
         else:
-            value = eval(scr.get())
+            try:
+                value = eval(scr.get())
+            except Exception as e:
+                value = "Invalid input"
+                print("Invalid Input")
+
+            except ZeroDivisionError as e:
+                value = "Invalid Input"
+                print("Invalid Input")
 
         val.set(value)
         scr.update()
@@ -25,8 +33,9 @@ def click(event):
 
 
 
-root.geometry("280x440")
+root.geometry("280x440+700+250")
 root.minsize(280, 440)
+root.maxsize(280, 440)
 root.title("Calculator")
 root.wm_iconbitmap('1.ico')
 
@@ -108,7 +117,7 @@ b = Button(f, text="/", padx=22, pady=17, font="arial 15 bold")
 b.pack(side=LEFT)
 b.bind("<Button-1>", click)
 
-b = Button(f, text="%", padx=18, pady=17, font="arial 15 bold")
+b = Button(f, text="+", padx=19, pady=17, font="arial 15 bold")
 b.pack(side=LEFT)
 b.bind("<Button-1>", click)
 
