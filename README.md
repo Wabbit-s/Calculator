@@ -1,4 +1,5 @@
 # Calculator 
 
-This is a Scietific Calc. made in python using tkinter Library.
+## This is a Scietific Calc. made in python using tkinter Library.
 
+Enjoy!
